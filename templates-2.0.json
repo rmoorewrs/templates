@@ -79,19 +79,21 @@
 				  "3000:3000/tcp",
 				  "222:22/tcp"
 				],
+				"hostname": "changeme",
 				"volumes": [
 				  {
 					"container": "/data",
 					"bind": "/portainer/Files/AppData/Gitea/data"
-			
 				  },
 				  {
 					"container": "/etc/timezone",
-					"bind": "/etc/timezone:ro"
+					"bind": "/etc/timezone",
+					"readonly" : true
 				  },
 				  {
 					"container": "/etc/localtime",
-					"bind": "/etc/localtime:ro"
+					"bind": "/etc/localtime",
+					"readonly" : true
 				  }
 				],
 				"env": [
