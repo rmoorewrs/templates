@@ -86,12 +86,12 @@
 			
 				  },
 				  {
-					"container": "/etc/timezone:ro",
-					"bind": "/etc/timezone"
+					"container": "/etc/timezone",
+					"bind": "/etc/timezone:ro"
 				  },
 				  {
-					"container": "/etc/localtime:ro",
-					"bind": "/etc/localtime"
+					"container": "/etc/localtime",
+					"bind": "/etc/localtime:ro"
 				  }
 				],
 				"env": [
