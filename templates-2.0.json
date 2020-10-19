@@ -83,7 +83,8 @@
 				"volumes": [
 				  {
 					"container": "/data",
-					"bind": "/portainer/Files/AppData/Gitea/data"
+					"bind": "/portainer/Files/AppData/Gitea/data",
+					"readonly" : false
 				  },
 				  {
 					"container": "/etc/timezone",
