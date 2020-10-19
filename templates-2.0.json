@@ -61,7 +61,6 @@
 				}
 			  ]
 			},
-
 			{
 				"type": 1,
 				"title": "Gitea",
@@ -109,8 +108,6 @@
 				  }
 				]
 			  },
-
-
 			{
 			  "type": 1,
 			  "title": "EmbyStat",
