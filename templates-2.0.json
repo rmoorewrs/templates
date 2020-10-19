@@ -61,6 +61,54 @@
 				}
 			  ]
 			},
+
+			{
+				"type": 1,
+				"title": "Gitea",
+				"name": "gitea",
+				"description": "Gitea is a low resource git portal written in golang",
+				"logo": "https://codeopolis.com/wp-content/uploads/2020/03/gitealogo.png",
+				"image": "linuxserver/airsonic:latest",
+				"categories": [
+				  "Other",
+				  "Tools"
+				],
+				"platform": "linux",
+				"restart_policy": "always",
+				"ports": [
+				  "3000:3000/tcp",
+				  "222:22/tcp"
+				],
+				"volumes": [
+				  {
+					"container": "/data",
+					"bind": "/portainer/Files/AppData/Gitea/data"
+			
+				  },
+				  {
+					"container": "/etc/timezone:ro",
+					"bind": "/etc/timezone"
+				  },
+				  {
+					"container": "/etc/localtime:ro",
+					"bind": "/etc/localtime"
+				  }
+				],
+				"env": [
+				  {
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1000"
+				  },
+				  {
+					"name": "PGID",
+					"label": "PGID",
+					"default": "1000"
+				  }
+				]
+			  },
+
+
 			{
 			  "type": 1,
 			  "title": "EmbyStat",
