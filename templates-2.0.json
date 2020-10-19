@@ -63,11 +63,58 @@
 			},
 			{
 				"type": 1,
-				"title": "Gitea",
+				"title": "Gitea for x86",
 				"name": "gitea",
 				"description": "Gitea is a low resource git portal written in golang",
 				"logo": "https://codeopolis.com/wp-content/uploads/2020/03/gitealogo.png",
 				"image": "gitea/gitea:latest",
+				"categories": [
+				  "Other",
+				  "Tools"
+				],
+				"platform": "linux",
+				"restart_policy": "always",
+				"ports": [
+				  "3000:3000/tcp",
+				  "222:22/tcp"
+				],
+				"volumes": [
+				  {
+					"container": "/data",
+					"bind": "/portainer/Files/AppData/Gitea/data",
+					"readonly" : false
+				  },
+				  {
+					"container": "/etc/timezone",
+					"bind": "/etc/timezone",
+					"readonly" : true
+				  },
+				  {
+					"container": "/etc/localtime",
+					"bind": "/etc/localtime",
+					"readonly" : true
+				  }
+				],
+				"env": [
+				  {
+					"name": "PUID",
+					"label": "PUID",
+					"default": "1000"
+				  },
+				  {
+					"name": "PGID",
+					"label": "PGID",
+					"default": "1000"
+				  }
+				]
+			  },
+			{
+				"type": 1,
+				"title": "Gitea for Raspberry Pi",
+				"name": "gitea",
+				"description": "Gitea is a low resource git portal written in golang",
+				"logo": "https://codeopolis.com/wp-content/uploads/2020/03/gitealogo.png",
+				"image": "gitea/gitea:linux-arm64",
 				"categories": [
 				  "Other",
 				  "Tools"
